@@ -9,7 +9,7 @@ import AppMain from './components/AppMain.vue'
 import AppCard from './components/AppCard.vue'
 
 //importo store
-//import { store } from './store';
+import { store } from './store';
 
 export default {
   components: {
