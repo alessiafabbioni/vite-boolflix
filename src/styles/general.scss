@@ -1,0 +1,13 @@
+@use './partials/variables' as *;
+
+//Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//Font
+@import 'node_modules/@fontsource-variable/montserrat/index.css';
+
+body {
+    font-family: $main-font;
+    color: $text-color;
+
+}
