@@ -23,18 +23,19 @@ export default {
     }
   },
   methods: {
-    getMovies(){
-      let myUrl = store.apiURL
+    getMedia(){
+      let filmUrl = `${store.apiURL}/movie${store.apiKey}`;
+      //let myFilmUrl = `${filmUrlURL}&query=${this.searchText}`;
 
       if(store.searchText !== "") {
-        myUrl += `?$query=${store.searchText}`;
+        filmUrl += `?$query=${store.searchText}`;
       }
 
+      //chiamata per i film
       axios
-      .get(myUrl)
-      .then((res=> {
-        //console.log(res.data.results);
-        store.filmList = res.data.results
+      .get(filmUrl)
+      .then((filmRes=> {
+        store.filmList = filmRes.data.results;
       }))
       .catch((err)=>{
         console.log("Errori", err);
@@ -47,7 +48,7 @@ export default {
   },
 
   created() {
-    this.getMovies();
+    this.getMedia();
 
   }
 }
@@ -58,7 +59,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @performSearch="getMovies"/>
+  <AppHeader @performSearch="getMedia"/>
   <main>
     <AppMain/>
   </main>
