@@ -3,7 +3,25 @@ export default {
     name: 'AppCard',
     props: {
         info: Object
-    }
+    },
+    methods: {
+    getLanguageFlag(languageCode) {
+        const flagMapping = {
+            'en': '🇺🇸', 
+            'it': '🇮🇹',
+            'de': '🇩🇪',
+            'fr': '🇫🇷',
+            'zh': '🇨🇳',
+            'es': '🇪🇸',
+            'ja': '🇯🇵',
+
+        };
+
+        const defaultFlag = '🌐';
+
+        return flagMapping[languageCode] || defaultFlag;
+        },
+    },
 
 }
 
@@ -13,7 +31,7 @@ export default {
     <div class="text-center">
         <h1>{{ info.title }}</h1>
         <h2>{{ info.original_title }}</h2>
-        <h3>{{ info.original_language }}</h3>
+        <h3>{{ getLanguageFlag(info.original_language) }}</h3>
         <h4>{{ info.vote_average }}</h4>
 
     </div>
