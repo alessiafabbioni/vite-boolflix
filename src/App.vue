@@ -24,18 +24,35 @@ export default {
   },
   methods: {
     getMedia(){
+      
+      //chiamata per i film
       let filmUrl = `${store.apiURL}/movie${store.apiKey}`;
-      //let myFilmUrl = `${filmUrlURL}&query=${this.searchText}`;
+      
 
       if(store.searchText !== "") {
-        filmUrl += `?$query=${store.searchText}`;
+        filmUrl += `&query=${store.searchText}`;
       }
 
-      //chiamata per i film
       axios
       .get(filmUrl)
       .then((filmRes=> {
         store.filmList = filmRes.data.results;
+      }))
+      .catch((err)=>{
+        console.log("Errori", err);
+      })
+      
+      //chiamata per le serie tv
+      let seriesUrl = `${store.apiURL}/tv${store.apiKey}`;
+
+      if(store.searchText !== "") {
+        seriesUrl += `&query=${store.searchText}`;
+      }
+
+      axios
+      .get(seriesUrl)
+      .then((seriesRes=> {
+        store.seriesList = seriesRes.data.results;
       }))
       .catch((err)=>{
         console.log("Errori", err);
