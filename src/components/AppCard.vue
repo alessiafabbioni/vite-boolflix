@@ -7,6 +7,13 @@ export default {
 </script>
 
 <template>
+    <div class="text-center">
+        <h1>Titolo</h1>
+        <h2>Titolo Originale</h2>
+        <h3>Lingua</h3>
+        <h4>Voto</h4>
+
+    </div>
 
 </template>
 

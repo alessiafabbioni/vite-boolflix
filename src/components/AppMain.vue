@@ -1,6 +1,11 @@
 <script>
+import AppCard from './AppCard.vue';
+
 export default {
     name: 'AppMain',
+    components: {
+        AppCard
+    }
 
 }
 
@@ -8,9 +13,10 @@ export default {
 
 <template>
     <section class="row">
-        <div class="col-6 col-md-4 col-lg-3">
-            card movie
 
+        <!-- Prototipo da ripetere -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <AppCard/>
         </div>
 
     </section>
