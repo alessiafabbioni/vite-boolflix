@@ -23,6 +23,13 @@ export default {
         },
     },
 
+    computed: {
+        mediaRating() {
+            return Math.round(this.info.vote_average / 2)
+        }
+    }
+
+
 }
 
 </script>
@@ -32,7 +39,7 @@ export default {
         <h1>{{ info.title }}</h1>
         <h2>{{ info.original_title }}</h2>
         <h3>{{ getLanguageFlag(info.original_language) }}</h3>
-        <h4>{{ info.vote_average }}</h4>
+        <span v-for="n in mediaRating" :key="n">⭐️</span>
 
     </div>
     <div>

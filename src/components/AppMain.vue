@@ -21,6 +21,9 @@ export default {
 
 </script>
 
+<!-- // ricordati di aggiungere il v if e v else per le due sezioni 
+in caso ci siano film o serie da mostrare o meno -->
+
 <template>
     <section id="film-section" class="row">
 
