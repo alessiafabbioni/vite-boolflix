@@ -1,16 +1,26 @@
 <script>
 export default {
     name: 'AppHeader',
-    props: ['message']
+
 
 }
 
 </script>
 
 <template>
-    <header class="container">
-        <h1>{{ message }}</h1>
+    <header class="container-fluid text-center">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-4">
+                <h1>BOOLFLIX</h1>
+            </div>
+            <div class="col-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search movie" aria-label="Search movie" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                </div>
+            </div>
 
+        </div>
     </header>
 
 </template>
@@ -20,12 +30,12 @@ export default {
 
 header{
     background-color: black;
-    max-height: 60px;
-    margin: 2rem;
+}
 
-    h1 {
-        color: red;
-    }
+h1 {
+    color: red;
+    font-family: $main-font;
+    margin: 0;
 }
 
 

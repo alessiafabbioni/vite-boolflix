@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader message="Boolflix"/>
+  <AppHeader/>
   <main>
     <AppMain/>
     <AppCard/>
@@ -46,6 +46,7 @@ export default {
 </template>
 
 <style lang="scss">
+@use './styles/general.scss';
 
 </style>
 
