@@ -1,6 +1,9 @@
 <script>
 export default {
     name: 'AppCard',
+    props: {
+        info: Object
+    }
 
 }
 
@@ -8,10 +11,10 @@ export default {
 
 <template>
     <div class="text-center">
-        <h1>Titolo</h1>
-        <h2>Titolo Originale</h2>
-        <h3>Lingua</h3>
-        <h4>Voto</h4>
+        <h1>{{ info.title }}</h1>
+        <h2>{{ info.original_title }}</h2>
+        <h3>{{ info.original_language }}</h3>
+        <h4>{{ info.vote_average }}</h4>
 
     </div>
 
