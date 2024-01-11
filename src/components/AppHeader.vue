@@ -1,4 +1,9 @@
 <script>
+
+//importo store
+import { store } from '../store';
+
+
 export default {
     name: 'AppHeader',
 
@@ -15,8 +20,8 @@ export default {
             </div>
             <div class="col-4">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search movie" aria-label="Search movie" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    <input v-model.trim="store.searchText" type="text" class="form-control" placeholder="Search movie" aria-label="Search movie" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click.prevent="$emit('performSearch')">Search</button>
                 </div>
             </div>
 
