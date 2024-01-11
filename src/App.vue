@@ -23,10 +23,25 @@ export default {
     }
   },
   methods: {
+    getMovies(){
+      axios
+      .get(store.apiURL)
+      .then((res=> {
+        //console.log(res.data.results);
+        store.filmList = res.data.results
+      }))
+      .catch((err)=>{
+        console.log("Errori", err);
+      })
+
+    }
+
+
 
   },
 
   created() {
+    this.getMovies();
 
   }
 }
