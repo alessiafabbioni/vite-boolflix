@@ -39,16 +39,21 @@ export default {
 </script>
 
 <template>
-    <div class="text-center">
-        <h1>{{ info.title }}</h1>
-        <h2>{{ info.original_title }}</h2>
-        <h3>{{ getLanguageFlag(info.original_language) }}</h3>
-        <span v-for="n in mediaRating" :key="n">⭐️</span>
+    <section>
+        <div>
+            <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
+        </div>
+        <div>
+            <span>{{ info.title }}</span>
+            <span>{{ info.original_title }}</span>
+            <span>{{ getLanguageFlag(info.original_language) }}</span>
+            <span v-for="n in mediaRating" :key="n">⭐️</span>
 
-    </div>
-    <div>
-        <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
-    </div>
+        </div>
+
+    </section>
+    
+
 
 
 </template>

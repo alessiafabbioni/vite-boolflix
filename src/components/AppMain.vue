@@ -27,39 +27,49 @@ in caso ci siano film o serie da mostrare o meno -->
 <template>
 
     <section class="container">
-        <div id="film-section">
-            <div>
-                <h1>Check out your movies:</h1>
-            </div>
-            <div class="row">
-            <!-- Prototipo da ripetere -->
-                
-                <div v-for="film in store.filmList" :key="film.id" class="col-6 col-md-4 col-lg-3">
-                    <AppCard :info="film"/>
-                </div>
-            </div>
-        </div>
         <div>
-            <div id="series-section">
+            <div id="film-section">
                 <div>
-                    <h1>Check out your tv series:</h1>
+                    <h1>Check out your movies:</h1>
                 </div>
-
-            <!-- Prototipo da ripetere -->
                 <div class="row">
-                    
-                    <div v-if="store.seriesList.length>0">
-                        <div v-for="series in store.seriesList" :key="series.id" class="col-6 col-md-4 col-lg-3">
-                            <SeriesAppCard :info="series"/>
+                    <div v-if="store.filmList.length>0">
+                        <div v-for="film in store.filmList" :key="film.id" class="col-6 col-md-4 col-lg-3">
+                            <AppCard :info="film"/>
                         </div>
+
                     </div>
                     <div v-else class="searching-gif">
-                        <span>It looks like there are no tv series that match your search</span>
+                        <span>It looks like there are no tv series that match your search 🤷🏻‍♀️</span>
                         <img :src="store.gifUrl" alt="searching gif">
+                        <span>Create a new search or update your current one ✍🏼</span>
                     </div>
 
                 </div>
-                
+            </div>
+
+            <div>
+                <div id="series-section">
+                    <div>
+                        <h1>Check out your tv series:</h1>
+                    </div>
+                    <div class="row">
+                        
+                        <div v-if="store.seriesList.length>0">
+                            <div v-for="series in store.seriesList" :key="series.id" class="col-6 col-md-4 col-lg-3">
+                                <SeriesAppCard :info="series"/>
+                            </div>
+                        </div>
+                        <div v-else class="searching-gif">
+                            <span>It looks like there are no tv series that match your search, create a new search or change your current one</span>
+                            <img :src="store.gifUrl" alt="searching gif">
+                            <span>Create a new search or update your current one ✍🏼</span>
+                        </div>
+
+                    </div>
+                    
+
+                </div>
 
             </div>
 
@@ -80,11 +90,16 @@ section {
     padding-top: 10rem;
 }
 
+#series-section{
+    margin-top: 5rem;
+}
+
 .searching-gif{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 3rem;
 
     span{
         padding: 1rem;

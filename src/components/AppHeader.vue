@@ -43,6 +43,7 @@ header{
     background-color: black;
     padding: 2rem;
     position: fixed;
+    z-index: 2;
     
 }
 
