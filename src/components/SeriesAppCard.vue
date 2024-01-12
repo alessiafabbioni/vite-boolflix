@@ -21,22 +21,39 @@ export default {
         return flagMapping[languageCode] || defaultFlag;
         },
     },
+    computed: {
+        mediaRating() {
+            return Math.round(this.info.vote_average / 2)
+        }
+    }
 
 }
 
 </script>
 
 <template>
-    <div class="text-center">
-        <h1>{{ info.name }}</h1>
-        <h2>{{ info.original_name }}</h2>
-        <h3>{{ getLanguageFlag(info.original_language) }}</h3>
-        <h4>{{ info.vote_average }}</h4>
-
-    </div>
     <div>
-        <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
-    </div>
+            <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="series poster image">
+        </div>
+        <div class="card-info">
+            <div>
+                <span class="font-weight-bold">Title: </span>
+                <span>{{ info.name}}</span>
+            </div>
+            <div>
+                <span class="font-weight-bold">Original title: </span>
+                <span>{{ info.original_name}}</span>
+            </div>
+            <div>
+                <span class="font-weight-bold">Original language: </span>
+                <span>{{ getLanguageFlag(info.original_language) }}</span>
+            </div>
+            <div>
+                <span class="font-weight-bold">Rating: </span>
+                <span v-for="n in mediaRating" :key="n">⭐️</span>
+            </div>
+
+        </div>
 
 </template>
 

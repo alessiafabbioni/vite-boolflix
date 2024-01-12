@@ -32,8 +32,8 @@ in caso ci siano film o serie da mostrare o meno -->
                 <div>
                     <h1>Check out your movies:</h1>
                 </div>
-                <div class="row">
-                    <div v-if="store.filmList.length>0">
+                <div>
+                    <div v-if="store.filmList.length>0" class="row">
                         <div v-for="film in store.filmList" :key="film.id" class="col-6 col-md-4 col-lg-3">
                             <AppCard :info="film"/>
                         </div>
@@ -53,12 +53,11 @@ in caso ci siano film o serie da mostrare o meno -->
                     <div>
                         <h1>Check out your tv series:</h1>
                     </div>
-                    <div class="row">
-                        
-                        <div v-if="store.seriesList.length>0">
-                            <div v-for="series in store.seriesList" :key="series.id" class="col-6 col-md-4 col-lg-3">
-                                <SeriesAppCard :info="series"/>
-                            </div>
+                    <div>
+                        <div v-if="store.seriesList.length>0" class="row">
+                            <ul v-for="series in store.seriesList" :key="series.id" class="col-6 col-md-4 col-lg-3">
+                                <li><SeriesAppCard :info="series"/></li>
+                            </ul>
                         </div>
                         <div v-else class="searching-gif">
                             <span>It looks like there are no tv series that match your search, create a new search or change your current one</span>
@@ -88,10 +87,22 @@ in caso ci siano film o serie da mostrare o meno -->
 
 section {
     padding-top: 10rem;
+
+    img {
+        object-fit: cover;
+    }
+
+    ul {
+        list-style: none;
+    }
 }
 
 #series-section{
     margin-top: 5rem;
+
+    h1 {
+        margin-bottom: 3rem;
+    }
 }
 
 .searching-gif{

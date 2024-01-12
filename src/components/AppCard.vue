@@ -41,13 +41,30 @@ export default {
 <template>
     <section>
         <div>
-            <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
+            <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="movie poster image">
         </div>
-        <div>
-            <span>{{ info.title }}</span>
-            <span>{{ info.original_title }}</span>
-            <span>{{ getLanguageFlag(info.original_language) }}</span>
-            <span v-for="n in mediaRating" :key="n">⭐️</span>
+        <div class="card-info">
+            <div>
+                <span>Title: </span>
+                <span>{{ info.title }}</span>
+            </div>
+            <div>
+                <span>Original title: </span>
+                <span>{{ info.original_title }}</span>
+            </div>
+            <div>
+                <span>Original language: </span>
+                <span>{{ getLanguageFlag(info.original_language) }}</span>
+            </div>
+            <div>
+                <span>Rating: </span>
+                <span v-for="n in mediaRating" :key="n">⭐️</span>
+            </div>
+
+            
+            
+            
+            
 
         </div>
 
@@ -60,6 +77,15 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables.scss' as *;
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+
+    img {
+        padding: 1rem;
+    }
+}
 
 
 </style>
