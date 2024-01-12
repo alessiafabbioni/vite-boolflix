@@ -57,10 +57,6 @@ export default {
       .catch((err)=>{
         console.log("Errori", err);
       })
-
-
-
-   
     }
 
 
@@ -92,6 +88,7 @@ export default {
 
 main{
   position: relative;
+  padding-top: 7rem;
 }
 </style>
 
