@@ -12,4 +12,5 @@ export const store = reactive ({
     
     gifUrl: 'https://media.giphy.com/media/3zDdFSPALuCe6C43nM/giphy.gif',
 
+
 });
