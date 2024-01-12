@@ -26,7 +26,7 @@ export default {
             </div>
             <div class="col-4">
                 <div class="input-group">
-                    <input v-model.trim="store.searchText" type="text" class="form-control" placeholder="Search movie" aria-label="Search movie" aria-describedby="button-addon2">
+                    <input v-model.trim="store.searchText" type="text" class="form-control" placeholder="Search" aria-label="Search media" aria-describedby="button-addon2">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click.prevent="$emit('performSearch')">Search</button>
                 </div>
             </div>
@@ -41,6 +41,9 @@ export default {
 
 header{
     background-color: black;
+    padding: 2rem;
+    position: fixed;
+    
 }
 
 h1 {

@@ -10,6 +10,6 @@ export const store = reactive ({
     apiURL: 'https://api.themoviedb.org/3/search',
     apiKey: '?api_key=8f11a389287f2ef115b50dade75fd0b3',
     
-
+    gifUrl: 'https://media.giphy.com/media/3zDdFSPALuCe6C43nM/giphy.gif',
 
 });

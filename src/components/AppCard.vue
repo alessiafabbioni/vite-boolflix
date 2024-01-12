@@ -5,6 +5,10 @@ export default {
         info: Object
     },
     methods: {
+    
+    //così funziona ma se rimane tempo fare l'import delle immagini
+    //tramite path come da slides
+
     getLanguageFlag(languageCode) {
         const flagMapping = {
             'en': '🇺🇸', 
