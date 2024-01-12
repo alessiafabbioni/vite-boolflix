@@ -56,7 +56,7 @@ export default {
 </script>
 
 <template>
-    <section class="media-container" @mouseover="showInfo" @mouseleave="hideInfo">
+    <section v-if="info.poster_path !== null" class="media-container" @mouseover="showInfo" @mouseleave="hideInfo">
         <div class="media-poster">
             <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="movie poster image">
         </div>
@@ -80,6 +80,8 @@ export default {
         </div>
 
     </section>
+    
+    <section v-else> Media not available 🥲</section>
     
 
 

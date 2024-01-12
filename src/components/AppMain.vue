@@ -34,9 +34,9 @@ in caso ci siano film o serie da mostrare o meno -->
                 </div>
                 <div>
                     <div v-if="store.filmList.length>0" class="row">
-                        <div v-for="film in store.filmList" :key="film.id" class="col-6 col-md-4 col-lg-3">
-                            <AppCard :info="film"/>
-                        </div>
+                        <ul v-for="film in store.filmList" :key="film.id" class="col-6 col-md-4 col-lg-3">
+                            <li><AppCard :info="film"/></li>
+                        </ul>
 
                     </div>
                     <div v-else class="searching-gif">

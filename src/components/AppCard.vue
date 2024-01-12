@@ -57,7 +57,7 @@ export default {
 </script>
 
 <template>
-    <section class="media-container" @mouseover="showInfo" @mouseleave="hideInfo">
+    <section v-if="info.poster_path !== null" class="media-container" @mouseover="showInfo" @mouseleave="hideInfo">
         <div class="media-poster">
             <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="movie poster image">
         </div>
@@ -74,13 +74,20 @@ export default {
                 <span>Original language: </span>
                 <span>{{ getLanguageFlag(info.original_language) }}</span>
             </div>
-            <div>
+            <div v-if="info.vote_average !== null && info.vote_average !== undefined && info.vote_average>1">
                 <span>Rating: </span>
                 <span v-for="n in mediaRating" :key="n">⭐️</span>
+            </div>
+            <div v-else>Rating not available 🥲</div>
+            <div>
+                <span>Overview: </span>
+                <span>{{ info.overview }}</span>
             </div>
         </div>
 
     </section>
+
+    <section v-else> Media not available 🥲</section>
     
 
 
@@ -122,10 +129,11 @@ span:first-child {
 .media-container:hover .card-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    overflow: scroll;
 
 }
 
