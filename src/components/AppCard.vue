@@ -66,7 +66,7 @@ export default {
                 <span>Title: </span>
                 <span>{{ info.title }}</span>
             </div>
-            <div>
+            <div v-if="info.original_title !== info.title">
                 <span>Original title: </span>
                 <span>{{ info.original_title }}</span>
             </div>
@@ -90,6 +90,9 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/variables.scss' as *;
 
+span:first-child {
+    font-weight: 700;
+}
 .media-container{
     position: relative;
     perspective: 1000px;
@@ -111,15 +114,18 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    backface-visibility: hidden;
-    padding: 1rem;
+    padding: 2rem;
     display: none;
+
 }
 
 .media-container:hover .card-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 
 }
 

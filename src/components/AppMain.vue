@@ -86,7 +86,7 @@ in caso ci siano film o serie da mostrare o meno -->
 
 
 section {
-    margin: 1rem;
+    padding: 1rem;
 
     img {
         object-fit: cover;
